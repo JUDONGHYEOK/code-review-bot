@@ -3,10 +3,12 @@ import { PromptTemplate } from '@langchain/core/prompts';
 
 const codellama = new Ollama({ model: 'codellama:13b', temperature: 0.1 });
 
-const llama = new Ollama({ model: 'llama3.1', temperature: 0.1 });
+const llama = new Ollama({ model: 'llama3.1', temperature: 0 });
 
 const template = `
-Please review the code below and provide your feedback on the following:
+Hi there, I want to request a code review for the following code.
+This code is different from the existing code and I would like to know if it is correct.
+Please provide your feedback on the following:
 1. Ensure there are no runtime errors.
 2. Check for any security vulnerabilities.
 3. Suggest any performance improvements.
@@ -17,7 +19,7 @@ Thank you.
 `;
 
 const translationTemplate = `
-아래 지문들을한국말로 번역해주세요. 불필요한 말은 하지않고 딱 번역된 말만 해주세요.
+아래 지문들을 한국말로 번역해주세요..
 {sentences}
 `;
 
