@@ -43,7 +43,6 @@ export async function main(
   pull_number: number
 ) {
   const review = await prompt.invoke({ code: diff });
-  console.log(review);
   const response = await translatePrompt.invoke({ sentences: review });
   return response;
 }
